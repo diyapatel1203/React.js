@@ -31,7 +31,7 @@ const Editpage = () => {
     const {title,price,image,category,description}=formdata
     
     const getdata=()=>{
-        axios.get(`http://localhost:3000/product/${id}`)
+        axios.get(`http://localhost:8000/product/${id}`)
         .then((res)=>{
             console.log(res.data)
             setformdata(res.data)
