@@ -32,6 +32,7 @@ const Product = () => {
     FetchData();
   }, [page, category, order,search]);
 
+  // Logout
   function handleckick() {
     const isAuth = localStorage.removeItem("token");
 
@@ -41,7 +42,7 @@ const Product = () => {
       window.location.href = "/product";
     }
   }
-
+// Delete
   const handledelete = (id) => {
     axios
       .delete(`http://localhost:8000/product/${id}`)

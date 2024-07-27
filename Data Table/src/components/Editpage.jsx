@@ -13,7 +13,7 @@ const Editpage = () => {
     const {id}=useParams()
     const [formdata,setformdata]=useState(initialdata)
 
-    const handlechange=(e)=>{
+    const handlechange=(e)=>{ 
       setformdata({...formdata,[e.target.name]:e.target.value})
     }
 
@@ -45,7 +45,9 @@ const Editpage = () => {
 
   return (
     <>
-    <h1>Edit Product Page</h1>
+    <div style={{display:"flex",justifyContent:"center"}}>
+      <div>
+      <h1>Edit Product Page</h1>
       <form action="" onClick={(e)=>handlesubmit(e)}>
         <input name='image' value={image} onChange={(e)=>handlechange(e)} type="text" placeholder='Image' /><br />
         <input name='title' value={title} onChange={(e)=>handlechange(e)} type="text" placeholder='Title' /><br />
@@ -58,8 +60,9 @@ const Editpage = () => {
         </select><br />
         <input name='price' value={price} onChange={(e)=>handlechange(e)} type="text" placeholder='Price' /><br />
         <input name='description' value={description} onChange={(e)=>handlechange(e)} type="text" placeholder='Description' /><br />
-        <input type="submit" />
-      </form>
+        <input type="submit" />      </form>
+      </div>
+    </div>
       </>
   )
 }
