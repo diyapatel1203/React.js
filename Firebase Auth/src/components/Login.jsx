@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../services/firebase';
+import { NavLink } from 'react-router-dom';
 const Login = () => {
     const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -40,6 +41,7 @@ const Login = () => {
           style={{padding:"10px 100px 10px 10px"}}
         /><br></br><br></br>
         <button style={{width:"100%",padding:"10px"}} type="submit">Login</button>
+        <p style={{fontSize:"12px",textAlign:"center"}}>Don't have an account ? <NavLink>Sign-up</NavLink></p>
       </form>
       
     </div>

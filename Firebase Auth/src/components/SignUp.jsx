@@ -4,6 +4,7 @@ import { auth } from "../services/firebase";
 import GoogleButton from 'react-google-button'
 import { signInWithPopup} from "firebase/auth";
 import { provider } from "../services/firebase";
+import { Link, NavLink } from "react-router-dom";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -37,6 +38,7 @@ const SignUp = () => {
   return (
     <div style={{border:"1px solid grey",padding:"20px",borderRadius:"10px"}}>
       <h2 style={{textAlign:"center"}}>Sign Up</h2>
+      <p style={{fontSize:"14px",textAlign:"center"}}>Creat Your Account Here !</p>
       <form onSubmit={handleSignUp}>
         <input
           type="email"
@@ -53,7 +55,7 @@ const SignUp = () => {
           style={{padding:"10px 100px 10px 10px"}}
         /><br></br><br></br>
         <button style={{width:"100%",padding:"10px"}} type="submit">Sign Up</button>
-        <p style={{fontSize:"12px",textAlign:"center"}}>Sign in using Google Account</p>
+        <p style={{fontSize:"12px",textAlign:"center"}}>Already have an account ? <NavLink >Login here</NavLink></p>
         {user ? (
         <div>
           <h1>Welcome, {user.displayName}</h1>
