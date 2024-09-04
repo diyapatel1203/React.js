@@ -8,7 +8,7 @@ const [user] = useAuthState(auth);
 
   if(!user)
   {
-    
+    alert("Login to Enter Product Page..")
     return <Navigate to={'/login'}/>
   }
 

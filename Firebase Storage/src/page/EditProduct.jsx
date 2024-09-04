@@ -52,6 +52,7 @@ const EditProduct = () => {
   useEffect(()=>{
     GetSingleData(id)
   },[])
+  
   return (
     <div style={{marginLeft:"33%"}}>
       <h1 style={{marginLeft:"10%",fontFamily:"sans-serif"}}>Edit Product Here</h1>

@@ -1,6 +1,5 @@
 import axios from 'axios'
 import { collection, deleteDoc, doc, getDocs } from 'firebase/firestore'
-
 import React, { useEffect, useState } from 'react'
 import { db } from '../services/firebase'
 import { Link } from 'react-router-dom'
@@ -8,6 +7,7 @@ import { Link } from 'react-router-dom'
 const Products = () => {
     const [data,setdata]=useState([])
 
+    // Fetch Data From Firebase
     const Getdata= async ()=>{
       
        getDocs(collection(db, "products"))
@@ -20,8 +20,8 @@ const Products = () => {
       })
     }
 
+    // Delete Data
     const deleteproduct=(id)=>{
-      // console.log(id)
 
       deleteDoc(doc(db,"products",id))
       .then((res)=>{
@@ -33,9 +33,13 @@ const Products = () => {
         console.log(err)
       })
     }
+
+
     useEffect(()=>{
         Getdata()
     },[])
+
+    
   return (
     <div>
       <h1 style={{textAlign:"center"}}>Product Page</h1>

@@ -19,7 +19,6 @@ const AlllRoutes = () => {
         <Route path='/login' element={<Login />}></Route>
         <Route path='/addproduct' element={<AddProduct />}></Route> 
         <Route path='/editproduct/:id' element={<EditProduct />}></Route> 
-
     </Routes>
   )
 }
